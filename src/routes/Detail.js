@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import "../styles/Detail.css";
+import "../styles/Detail.module.css";
 
 function Detail() {
     const [loading, setLoading] = useState(true);
@@ -16,12 +16,12 @@ function Detail() {
         getMovie();
     }, []);
     return (
-        <div className="detail">
+        <div>
             {loading ? <h1>Loading...</h1> : 
             <div>
-                <div className="left"><img className="poster" src={movie.medium_cover_image} alt=''/></div>
-                <div className="right">
-                    <div className="top">
+                <div><img src={movie.medium_cover_image} alt=''/></div>
+                <div>
+                    <div>
                         <h3>{movie.title_long}</h3>
                         <ul>
                             <li>스코어 : {movie.rating} / 10</li>
